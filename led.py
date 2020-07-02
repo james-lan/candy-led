@@ -32,14 +32,14 @@ def turn_on(color='white',delay=0.0):
     cmd[3] = rand(255)
     cmd[2] = chsum(cmd[0], cmd[1], cmd[3])
     with open(devpath, 'wb') as device:
-        device.write(str(cmd))
+        device.write(cmd)
 
 def turn_off(delay=0.0):
     turn_on('black',delay)
 
 def blink(color, count=1, delay=0.2):
     for i in range(count):
-        print color
+        print(color)
         turn_on(color, delay)
         turn_off(delay)
     turn_off()
