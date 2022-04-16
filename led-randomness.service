@@ -1,0 +1,14 @@
+[Unit]
+Description=LED blinker for Candy (Dell Chromebook 3120)
+StartLimitIntervalSec=5
+After=basic.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=$USER
+ExecStart=/usr/bin/python3 /home/$USER/git/candy-led/led.py
+
+[Install]
+WantedBy=multi-user.target
